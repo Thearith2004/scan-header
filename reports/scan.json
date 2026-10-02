@@ -1,0 +1,65 @@
+{
+    "target": "http://127.0.0.1:5001/boolean?id=1",
+    "total_findings": 7,
+    "total_endpoints": 1,
+    "findings": [
+        {
+            "title": "Missing Content-Security-Policy",
+            "severity": "MEDIUM",
+            "description": "Helps protect against XSS and content injection",
+            "url": "http://127.0.0.1:5001/boolean?id=1",
+            "evidence": "Content-Security-Policy header was not found in the HTTP response"
+        },
+        {
+            "title": "Missing Strict-Transport-Security",
+            "severity": "MEDIUM",
+            "description": "Forces HTTPS connections",
+            "url": "http://127.0.0.1:5001/boolean?id=1",
+            "evidence": "Strict-Transport-Security header was not found in the HTTP response"
+        },
+        {
+            "title": "Missing X-Content-Type-Options",
+            "severity": "LOW",
+            "description": "Prevents MIME-type sniffing",
+            "url": "http://127.0.0.1:5001/boolean?id=1",
+            "evidence": "X-Content-Type-Options header was not found in the HTTP response"
+        },
+        {
+            "title": "Missing X-Frame-Options",
+            "severity": "MEDIUM",
+            "description": "Helps prevent clickjacking",
+            "url": "http://127.0.0.1:5001/boolean?id=1",
+            "evidence": "X-Frame-Options header was not found in the HTTP response"
+        },
+        {
+            "title": "Missing Referrer-Policy",
+            "severity": "LOW",
+            "description": "Controls referrer information",
+            "url": "http://127.0.0.1:5001/boolean?id=1",
+            "evidence": "Referrer-Policy header was not found in the HTTP response"
+        },
+        {
+            "title": "Missing Permissions-Policy",
+            "severity": "LOW",
+            "description": "Controls browser features",
+            "url": "http://127.0.0.1:5001/boolean?id=1",
+            "evidence": "Permissions-Policy header was not found in the HTTP response"
+        },
+        {
+            "title": "Possible Boolean-based SQL Injection",
+            "severity": "HIGH",
+            "description": "The parameter behaved like the baseline when a TRUE condition was supplied, but behaved differently when a FALSE condition was supplied.",
+            "url": "http://127.0.0.1:5001/boolean?id=1+AND+1%3D2",
+            "evidence": "Parameter: id; Baseline status: 200; TRUE status: 200; FALSE status: 404; Baseline response size: 13 bytes; TRUE response size: 13 bytes; FALSE response size: 17 bytes; Baseline/TRUE similarity: 1.00; Baseline/FALSE similarity: 0.87; Confidence: HIGH"
+        }
+    ],
+    "endpoints": [
+        {
+            "url": "http://127.0.0.1:5001/boolean?id=1",
+            "method": "GET",
+            "parameters": [
+                "id"
+            ]
+        }
+    ]
+}
